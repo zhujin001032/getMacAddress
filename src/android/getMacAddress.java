@@ -7,14 +7,13 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -47,35 +46,37 @@ public class getMacAddress extends CordovaPlugin {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             Log.e("=====", "6.0以下");
-            Toast.makeText(cordova.getContext(), "6.0以下", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(cordova.getContext(), "6.0以下", Toast.LENGTH_SHORT).show();
             strMac = getLocalMacAddressFromWifiInfo(cordova.getContext());
             callbackContext.success(strMac);
         } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N
                 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Log.e("=====", "6.0以上7.0以下");
-            Toast.makeText(cordova.getContext(), "6.0以上7.0以下", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(cordova.getContext(), "6.0以上7.0以下", Toast.LENGTH_SHORT).show();
             strMac = getMacAddress(cordova.getContext());
             callbackContext.success(strMac);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             Log.e("=====", "7.0以上");
             if (!TextUtils.isEmpty(getMacAddress())) {
                 Log.e("=====", "7.0以上1");
-                Toast.makeText(cordova.getContext(), "7.0以上1", Toast.LENGTH_SHORT).show();
+    //            Toast.makeText(cordova.getContext(), "7.0以上1", Toast.LENGTH_SHORT).show();
                 strMac = getMacAddress();
                 callbackContext.success(strMac);
             } else if (!TextUtils.isEmpty(getMachineHardwareAddress())) {
                 Log.e("=====", "7.0以上2");
-                Toast.makeText(cordova.getContext(), "7.0以上2", Toast.LENGTH_SHORT).show();
+    //            Toast.makeText(cordova.getContext(), "7.0以上2", Toast.LENGTH_SHORT).show();
                 strMac = getMachineHardwareAddress();
                 callbackContext.success(strMac);
             } else {
                 Log.e("=====", "7.0以上3");
-                Toast.makeText(cordova.getContext(), "7.0以上3", Toast.LENGTH_SHORT).show();
+    //            Toast.makeText(cordova.getContext(), "7.0以上3", Toast.LENGTH_SHORT).show();
                 strMac = getLocalMacAddressFromBusybox();
                 callbackContext.success(strMac);
             }
+        } else {
+            callbackContext.error("can't get mac address" );
         }
-        callbackContext.error("can't get mac address" );
+
     }
     /**
      * 根据wifi信息获取本地mac
