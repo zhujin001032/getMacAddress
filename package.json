@@ -2,6 +2,10 @@
   "name": "getMacAddress",
   "version": "1.0.0",
   "description": "get android mac address for 6789..",
+   "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zhujin001032/cordova-screenshot-to-album.git"
+    },
   "cordova": {
     "id": "jasonhe.getMacAddress",
     "platforms": [
@@ -11,6 +15,9 @@
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
+    "android",
+    "mac",
+    "mac address",
     "get-mac-address"
   ],
   "author": "JasonHe",
