@@ -1,0 +1,18 @@
+{
+  "name": "getMacAddress",
+  "version": "1.0.0",
+  "description": "get android mac address for 6789..",
+  "cordova": {
+    "id": "jasonhe.getMacAddress",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "get-mac-address"
+  ],
+  "author": "JasonHe",
+  "license": "ISC"
+}
