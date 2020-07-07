@@ -1,13 +1,13 @@
 {
-  "name": "getMacAddress",
+  "name": "com.jasonhe.macaddress",
   "version": "1.0.0",
-  "description": "get android mac address for 6789..",
+  "description": "get mac address for android 6789..",
    "repository": {
         "type": "git",
-        "url": "git+https://github.com/zhujin001032/cordova-screenshot-to-album.git"
+        "url": "git+https://github.com/zhujin001032/getMacAddress.git"
     },
   "cordova": {
-    "id": "jasonhe.getMacAddress",
+    "id": "com.jasonhe.macaddress",
     "platforms": [
       "android"
     ]

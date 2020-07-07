@@ -28,7 +28,7 @@ import java.util.Enumeration;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class getMacAddress extends CordovaPlugin {
+public class GetMacAddress extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
