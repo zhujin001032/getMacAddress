@@ -34,8 +34,12 @@ public class getMacAddress extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("getMacAddress")) {
             
-            this.getMacAddress(callbackContext);
-
+				cordova.getThreadPool().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        getMacAddress(callbackContext);
+                    }
+                });
             return true;
         }
         return false;
